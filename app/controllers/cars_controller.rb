@@ -3,7 +3,7 @@ class CarsController < ApplicationController
     @cars = Car.all
   end
 
-  def show;
+  def show
     @car = Car.find(params[:id])
   end
 
@@ -15,9 +15,14 @@ class CarsController < ApplicationController
     @car = Car.new(params.require(:car).permit(:brand))
 
     if @car.save
-      redirect_to @car
+      redirect_to cars_path
     else
       render :new
     end
+  end
+
+  def destroy
+    Car.find(params[:id]).destroy
+    redirect_to cars_path
   end
 end
