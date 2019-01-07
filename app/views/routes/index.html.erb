@@ -12,9 +12,15 @@
     <% @routes.each do |route| %>
       <tr>
         <td><%= route.name %></td>
+
+        <td>
+          <% route.railway_stations.each do |station| %>
+            <li><%= station.title %></li>
+          <% end %>
+        </td>
+
         <td><%= link_to 'Show', route %></td>
         <td><%= link_to 'Edit', edit_route_path(route) %></td>
-        <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
