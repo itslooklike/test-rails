@@ -16,7 +16,7 @@ class TrainsController < ApplicationController
   def create
     @train = Train.new(train_params)
     if @train.save
-      redirect_to @train
+      redirect_to trains_url
     else
       render :new
     end
@@ -42,6 +42,6 @@ class TrainsController < ApplicationController
   end
 
   def train_params
-    params.require(:train).permit(:number)
+    params.require(:train).permit(:number, :current_station_id)
   end
 end

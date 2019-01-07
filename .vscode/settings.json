@@ -71,6 +71,8 @@
     "app/*jobs": true,
     "app/*jobs.*": true,
     "app/*mailers": true,
-    "app/*mailers.*": true
+    "app/*mailers.*": true,
+    "app/controllers/concerns": true,
+    "app/models/concerns": true
   }
 }

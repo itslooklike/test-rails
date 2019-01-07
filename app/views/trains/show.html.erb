@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Номер:</strong>
   <%= @train.number %>
 </p>
+
+<% if @train.current_station %>
+  <p>
+    <strong>На странции:</strong>
+    <%= @train.current_station.title %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>
