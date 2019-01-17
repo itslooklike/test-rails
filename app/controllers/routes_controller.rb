@@ -3,6 +3,10 @@ class RoutesController < ApplicationController
     @routes = Route.all
   end
 
+  def show
+    @route = Route.find(params[:id])
+  end
+
   def new
     @route = Route.new
   end
@@ -22,5 +26,4 @@ class RoutesController < ApplicationController
   def route_params
     params.require(:route).permit(:name)
   end
-
 end
