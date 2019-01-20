@@ -9,4 +9,7 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <% cities_array = RailwayStation.all.map { |city| [city.title, city.id] } %>
+  <%= options_for_select(cities_array) %>
 <% end %>
